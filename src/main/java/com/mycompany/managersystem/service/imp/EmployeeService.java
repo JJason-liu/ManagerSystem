@@ -10,6 +10,8 @@ import com.mycompany.managersystem.service.interfaces.EmployeeServiceInter;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -18,8 +20,10 @@ import org.springframework.transaction.annotation.Transactional;
  * @date 2018-3-8 11:06:09
  */
 @Transactional
+@Component("EmployeeService")
 public class EmployeeService implements EmployeeServiceInter {
 
+    @Autowired
     private SessionFactory sessionFactory;
 
     @Override
@@ -41,9 +45,4 @@ public class EmployeeService implements EmployeeServiceInter {
     public void delEmployeeById(Serializable id) {
 
     }
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
 }

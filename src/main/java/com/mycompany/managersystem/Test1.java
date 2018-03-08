@@ -24,7 +24,7 @@ public class Test1 {
 
     public static void main(String[] args) {
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-        EmployeeServiceInter employeeServiceInter = (EmployeeServiceInter) ac.getBean("employeeService");
-        employeeServiceInter.addEmployee(new Employee("jone", "sd", TimeUtils.getNowTimestamp()));
+        EmployeeServiceInter employeeServiceInter = (EmployeeServiceInter) ac.getBean("EmployeeService");
+        employeeServiceInter.addEmployee(new Employee("wohhahah", "sd", TimeUtils.getNowTimestamp()));
     }
 }

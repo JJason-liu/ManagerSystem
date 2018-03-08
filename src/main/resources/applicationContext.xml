@@ -44,13 +44,12 @@
         </property>
     </bean>
     <!--配置EmployeeService对象-->
-    <bean id="employeeService" class="com.mycompany.managersystem.service.imp.EmployeeService">
-        <property name="sessionFactory" ref ="sessionFactory"/>
-    </bean>
    <!--配置事务管理对象-->
     <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
        <!--启用事务注解-->
        <tx:annotation-driven transaction-manager="txManager"/>
+        <!-- component-scan 会自动开启bean自动注册,base-package会扫描该包下的特殊注解 -->
+       <context:component-scan base-package="com.mycompany.managersystem.service.imp" />
 </beans>
